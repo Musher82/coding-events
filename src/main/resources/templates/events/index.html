@@ -3,21 +3,27 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 
-<h1>All Events</h1>
+<h1 class="text-center">All Events</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 
 <p th:unless="${events} and ${events.size()}"> No Upcoming Events!</p>
 
-<table class="table table-striped">
+<table class="table table-striped text-center">
     <thead>
         <tr>
-            <th>Name</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Address</th>
         </tr>
     </thead>
-    <tr th:each="event : ${events}">
-        <td th:text="${event}"></td>
+    <th:block th:each="event : ${events}">
+    <tr>
+        <td th:text="${event.key}"></td>
+        <td th:text="${event.value}"></td>
+        <td th:replace="fragments :: address"></td>
     </tr>
+    </th:block>
 </table>
 
 </body>
