@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 <header th:replace="fragments :: navigation"></header>
-<h1>All Events</h1>
+<h1 th:text="${title}"></h1>
 
 <p th:unless="${events} and ${events.size()}"> No Upcoming Events!</p>
 
@@ -13,12 +13,16 @@
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Edit Event</th>
         </tr>
     </thead>
     <tr th:each="event : ${events}">
         <td th:text="${event.id}"></td>
         <td th:text="${event.name}"></td>
         <td th:text="${event.description}"></td>
+        <td>
+            <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+        </td>
     </tr>
 </table>
 
