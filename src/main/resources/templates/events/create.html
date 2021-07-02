@@ -3,19 +3,18 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 
-<h1>Create Event</h1>
+<header th:replace="fragments :: navigation"></header>
 
-<nav th:replace="fragments :: navigation"></nav>
-
+<h3>Create an Event!</h3>
 <form method = "post" action = "/events/create">
     <div class="form-group">
         <label>Event Name
-            <input type= "text" name = "eventName" class="form-control">
+            <input type= "text" name = "name" class="form-control">
         </label>
     </div>
     <div class="form-group">
         <label>Description
-            <input type= "text" name = "eventDescription" class="form-control">
+            <input type= "text" name = "description" class="form-control">
         </label>
     </div>
     <br>
