@@ -18,19 +18,21 @@ public class Event {
     private String description;
 
     @NotBlank(message = "Email is required")
-    @Email(message = "invalid email, try again.")
+    @Email(message = "Invalid email, try again.")
     private String contactEmail;
 
 
     public Event(String name, String description, String contactEmail) {
+        this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+    }
+
+    public Event() {
         this.id = nextId;
         nextId++;
     }
-
-    public Event() {}
 
     public String getName() {
         return name;
