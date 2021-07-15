@@ -3,7 +3,6 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 <header th:replace="fragments :: navigation"></header>
-<h1>All Events</h1>
 
 <p th:unless="${events} and ${events.size()}"> No Upcoming Events!</p>
 
